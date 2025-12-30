@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-title: "CriticalArcRemovalProblem"
+title: "linearStochasticLogistic"
 authors:
   - family-names: Altarocca
     given-names: Francesco
     affiliation: "Independent Researcher"
 version: "0.2.2"
 doi: ""
-url: "https://github.com/francescoaltarocca-bot/CriticalArcRemovalProblem"
+url: "https://github.com/francescoaltarocca-bot/linearStochasticLogistic"
