@@ -1,88 +1,119 @@
-# CriticalArcRemovalProblem
-
+# linearStochasticLogistic
 
 
 ## Description
+The software performs an analysis of different **machine learning approaches** to the regression problem, using multiple methods:
 
-This software focuses on optimizing the completion time of a complex process, divided into a series of interdependent activities. In particular, it studies the possibility of
-reducing overall times by removing some weak dependencies between activities.
-In the context of an operational process, personnel assigned to a specific activity may often
-be temporarily assigned to other tasks, or a lack of resources, such as machinery, may prevent the simultaneous execution of multiple activities. These factors generate precedence constraints
-that define the order of execution of operations and can have a significant impact on the total duration of the project.
-To improve efficiency, a company could invest financial resources to hire new staff or purchase equipment in order to eliminate some of these dependencies. However, the
-main challenge is to identify which precedence constraints to modify in order to achieve the best possible result, considering both the available resources and the characteristics of the process.
-This analysis focuses on identifying weak precedences whose removal can significantly reduce the overall project time. Specifically, the problem is addressed by simulating scenarios in which a maximum number of activities are removed based on the available budget.
-In linear programming, this problem is known as the **Critical Arc Removal Problem” (CARP)**.
-This software proposes the solution of the **Critical Arc Removal Problem (CARP)** using both exact optimization models implemented in **AMPL** and heuristic algorithms designed to efficiently handle large-scale instances of the problem.
-The Critical Arc Removal Problem involves identifying a subset of critical edges (arcs) whose removal produces the greatest degradation of network performance under given constraints.
+- **Linear regression** using both the classical and stochastic least squares methods; in this case, the model was trained using both separate datasets and the merged dataset.
+- **Logistic regression**.
+
+Both **linear** and **logistic regression** models were implemented in **MATLAB**.
+
+## Dataset Description
+
+The data were downloaded from the **UCI Machine Learning Repository**, specifically the **Wine Quality** dataset.  
+This dataset contains information on wine samples, both white and red, from Portugal.
+
+- **Total samples:** 6,497  
+  - 4,898 white wines  
+  - 1,599 red wines  
+- **Number of features:** 11 (continuous)
+- **Target variable:** wine quality (integer values ranging from 0 to 10)
+
+---
+
+## Variables Table
+
+| Variable Name           | Role    | Type       |
+|-------------------------|---------|------------|
+| fixed_acidity           | Feature | Continuous |
+| volatile_acidity        | Feature | Continuous |
+| citric_acid             | Feature | Continuous |
+| residual_sugar          | Feature | Continuous |
+| chlorides               | Feature | Continuous |
+| free_sulfur_dioxide     | Feature | Continuous |
+| total_sulfur_dioxide    | Feature | Continuous |
+| density                 | Feature | Continuous |
+| pH                      | Feature | Continuous |
+| sulphates               | Feature | Continuous |
+| alcohol                 | Feature | Continuous |
+| quality                 | Target  | Integer    |
+
 
 ## Repository Structure
 
 ```text
 CriticalArcRemovalProblem/
-├── AMPL/                    # AMPL models
-├── LICENSE                  # MIT o altra licenza
-├── README.md                # documentazione principale
-├── CITATION.cff             # metadati citazionali
-├── dagGen.py                # generates examples
-├── runAllExamples.py        # run experiments
+├── linear.m                 # ML linear model (MATHLAB)
+├── linear_stochastic.m      # ML linear stochastic model (MATHLAB)
+├── logistic.m               # ML logistic model (MATHLAB)
+├── LICENSE                  # license
+├── README.md                # documentation
+├── CITATION.cff             # citation metadata
 └── requirements.txt         # dependencies
 ```
 
-## 🧠 Key Features
+## Key Features
 
-- **Exact AMPL models** for small to medium-size instances
-- **Heuristic algorithms** suited for large-scale graphs
-- Support for custom input instances
-- Demonstration scripts and reproducible examples
+## Key Features
+
+- Implementation and framework for comparison of multiple **machine learning approaches** for regression and classification tasks.
+- **Linear regression** models based on both **classical** and **stochastic least squares** methods.
+- **Logistic regression** model for classification-oriented analysis.
+- Training performed on **separate datasets** (red and white wine) as well as on the **merged dataset**.
+- Experimental analysis conducted using real-world data from the **UCI Machine Learning Repository**.
+- Use of the **Wine Quality dataset**, comprising 6,497 wine samples with 11 continuous features.
+- Clear separation between **features** and **target variable** (wine quality).
+- Reproducible experimental workflow suitable for research and educational purposes.
+- Models implemented in **MATLAB**.
 
 ## Requirements
 
-Python ≥ 3.9
-
-AMPL (see AMPL documentation)
-
-Solver (CPLEX, Gurobi, or open-source such as CBC)
-
-Install all required dependencies using:
-pip install -r requirements.txt
+- **MATLAB** (desktop version or **MATLAB Online**) is required to run the software.
+- A valid **MathWorks license** is required for MATLAB usage.
+- No additional third-party MATLAB toolboxes are required unless otherwise specified.
+- Internet access is required when using **MATLAB Online**.
 
 See requirements.txt for more datails.
 
 ## Runtime Requirements
-- **Python:** 3.9 or higher
+- **MATLAB** (desktop version or **MATLAB Online**) is required to run the software.
 - **Memory:** at least 8GB recommended for large datasets
 - **OS:** Linux, macOS, or Windows 10+
 
-## Additional software requirement: AMPL
-After installation, ensure that the ampl executable is available in the system PATH.
-Additionally, at least one AMPL-compatible solver (e.g., CBC, Gurobi, CPLEX) must be installed and properly configured.
 
-## Licensing note
-This repository does not redistribute AMPL.
-AMPL is proprietary software and is subject to its own license terms, which must be obtained independently by the user.
+## Licensing Note
+
+This software is released as MIT License open-source code; however, it depends on **MATLAB**, which is proprietary software developed by MathWorks.
+
+- A valid **MATLAB license** (desktop or MATLAB Online) is required to run the code.
+- MATLAB is **not redistributed** with this repository and must be obtained independently from MathWorks.
+- All users must comply with the MATLAB license terms.
+
+The dataset used in this project is publicly available from the **UCI Machine Learning Repository** and is subject to its own usage conditions.
+
 
 ## Usage
-To generate a graph from a JSON file containing tweets:
-```bash
-Usage: python runAllExamples.py
 
-# Set the directory containing the .dat files
-folder_path = "./"          # Modify with the actual path
-output_file = "output.txt"  # File where results will be saved
-# Path to the AMPL executable
-ampl_executable = "./AMPL/ampl"  # Modify with the correct path
+1. Download or clone the repository.
+2. Ensure that **MATLAB (desktop or MATLAB Online)** is available and properly licensed.
+3. Load the provided scripts into MATLAB.
+4. Download the **Wine Quality dataset** from the UCI Machine Learning Repository and place it in the expected data directory.
+5. Run the main MATLAB scripts to execute the regression and classification analyses.
 
-```
+The software supports running experiments on:
+- Separate datasets (red and white wine)
+- The merged dataset
 
 ## Output
 
-The output file contains detailed logs of the experimental runs, including parameter settings, execution results, and performance metrics for both AMPL optimization models and heuristic models.
+The software produces numerical and graphical outputs that summarize the results of the experiments, including:
 
-## Example
-```bash
-python runAllExamples.py
-```
+- Estimated model parameters for linear and logistic regression
+- Performance metrics for regression and classification tasks
+- Results obtained on separate datasets versus the merged dataset
+
+Outputs are displayed in the MATLAB environment and, where specified, saved to files for further analysis.
 
 ## Reproducibility
 
@@ -100,13 +131,13 @@ See the LICENSE file for details.
 
 If you use BigDataGraph in academic work, please cite it as follows:
 
-@software{CriticalArcRemovalProblem2025,
-  title     = {CriticalArcRemovalProblem},
+@software{linearStochasticLogistic2025,
+  title     = {linearStochasticLogistic},
   author    = {Altarocca, Francesco},
   affiliation = {Independent Researcher},
   year      = {2025},
   publisher = {Zenodo},
-  doi       = {https://doi.org/10.5281/zenodo.18089854}
+  doi       = {}
 }
 
 ## Disclaimer
