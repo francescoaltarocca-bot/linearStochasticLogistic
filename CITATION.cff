@@ -5,5 +5,5 @@ authors:
     given-names: Francesco
     affiliation: "Independent Researcher"
 version: "0.2.2"
-doi: ""
+doi: "https://doi.org/10.5281/zenodo.18094769"
 url: "https://github.com/francescoaltarocca-bot/linearStochasticLogistic"
