@@ -1,2 +1,4 @@
-networkx>=2.8
-matplotlib>=3.6
+- **MATLAB** (desktop version or **MATLAB Online**) is required to run the software.
+- A valid **MathWorks license** is required for MATLAB usage.
+- No additional third-party MATLAB toolboxes are required unless otherwise specified.
+- Internet access is required when using **MATLAB Online**.
