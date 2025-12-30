@@ -55,8 +55,6 @@ CriticalArcRemovalProblem/
 
 ## Key Features
 
-## Key Features
-
 - Implementation and framework for comparison of multiple **machine learning approaches** for regression and classification tasks.
 - **Linear regression** models based on both **classical** and **stochastic least squares** methods.
 - **Logistic regression** model for classification-oriented analysis.
